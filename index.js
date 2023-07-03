@@ -15,7 +15,7 @@ config({ path: "./config/config.env" });
 
 
 //middlewares
-app.use(express.static(path.join(__dirname,"../client/build")))
+app.use(express.static(path.join(__dirname,"./client/build")))
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -35,7 +35,7 @@ app.use("/api/admin/category", CategoryRouter);
 DBconnect();
 
 app.use("*",function(req,res){
-  res.sendFile(path.join(__dirname,"../client/build/index.html"))
+  res.sendFile(path.join(__dirname,"./client/build/index.html"))
 })
 
 app.listen(process.env.PORT, () => {
