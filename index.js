@@ -21,7 +21,7 @@ DBconnect();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 //middlewares
-app.use(express.static(path.join(__dirname,"../client/build")))
+app.use(express.static(path.join(__dirname,"../Client/build")))
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -39,7 +39,7 @@ app.use("/api/admin/category", CategoryRouter);
 
 
 app.use("*",function(req,res){
-  res.sendFile(path.join(__dirname,"../client/build/index.html"))
+  res.sendFile(path.join(__dirname,"../Client/build/index.html"))
 })
 
 app.listen(process.env.PORT, () => {
