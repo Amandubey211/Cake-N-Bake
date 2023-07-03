@@ -39,7 +39,7 @@ app.use("/api/admin/category", CategoryRouter);
 
 
 app.use("*",function(req,res){
-  res.sendFile(path.join(__dirname,"./Client/build/index.html")))
+  res.sendFile(path.join(__dirname,"./Client/build/index.html"))
 })
 
 app.listen(process.env.PORT, () => {
